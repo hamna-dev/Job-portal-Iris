@@ -1,6 +1,15 @@
 <?php 
 include 'connect/connect.php';
+$servername = "localhost"; // server name
+$username = "root";        // username
+$password = "";            // password
+$dbname = "jobiris_db";    // database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
 session_start();
+
 
 // Fetch jobs from the database with user names
 $sql = "SELECT jobs.*, company.company_name FROM jobs INNER JOIN company ON jobs.company_id = company.company_id LIMIT 6";
